@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -9,31 +8,37 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$devaway-racing-services-primary: mat-palette($mat-indigo);
-$devaway-racing-services-accent: mat-palette($mat-pink, A200, A100, A400);
+$devaway-racing-services-primary: mat-palette($mat-deep-orange);
+$devaway-racing-services-accent: mat-palette($mat-pink, '#ff3300', '#ff6e38', '#c30000', $light-primary-text);
 
-// The warn palette is optional (defaults to red).
 $devaway-racing-services-warn: mat-palette($mat-red);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$devaway-racing-services-theme: mat-light-theme((
-  color: (
-    primary: $devaway-racing-services-primary,
-    accent: $devaway-racing-services-accent,
-    warn: $devaway-racing-services-warn,
-  )
-));
+
+$devaway-racing-services-theme: mat-light-theme((color: (primary: $devaway-racing-services-primary,
+      accent: $devaway-racing-services-accent,
+      warn: $devaway-racing-services-warn,
+    )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($devaway-racing-services-theme);
+@import 'variables';
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  background:
+    linear-gradient(90deg, $bg-color ($bg-dot-space - $bg-dot-size), transparent 1%) center,
+    linear-gradient($bg-color ($bg-dot-space - $bg-dot-size), transparent 1%) center,
+    $bg-dot-color;
+  background-size: $bg-dot-space $bg-dot-space;
+}

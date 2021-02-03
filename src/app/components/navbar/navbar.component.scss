@@ -1,0 +1,20 @@
+.navbar {
+  .nav-items {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+      width: 18rem;
+    }
+  }
+
+}
