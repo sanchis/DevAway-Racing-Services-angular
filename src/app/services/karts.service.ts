@@ -14,6 +14,7 @@ export class KartsService {
 
   public readonly globalRanking = this.getGlobalRanking();
   public readonly getRankinPilotRaces = drivers.map(drv => this.getRankingByPilot(drv._id));
+  public readonly races = this.getRaces();
 
   constructor() { }
 

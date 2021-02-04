@@ -140,12 +140,14 @@
       true,
       "attribute",
       "app",
+      "devaway",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "app",
+      "devaway",
       "kebab-case"
     ]
   }

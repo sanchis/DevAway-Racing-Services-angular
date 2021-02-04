@@ -5,7 +5,8 @@
 
     <button mat-button> Global Ranking </button>
     <button mat-button> Pilot Races </button>
-    <button mat-button> Races </button>
+    <button mat-button
+            [routerLink]="['/races']"> Races </button>
   </div>
 
   <div class="logo-container">
@@ -14,3 +15,4 @@
   </div>
   <div class="nav-items"></div>
 </mat-toolbar>
+<!-- //TODO investigate active button -->
