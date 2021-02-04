@@ -8,6 +8,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './modules/material/material.module';
+import { KartsService } from './services/karts.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { MaterialModule } from './modules/material/material.module';
     AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [KartsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -30,3 +31,4 @@ export class AppModule { }
 //TODO TEST
 //TODO readme
 // https://github.com/filipows/angular-animations#running-demo-app
+// todo dark theme
