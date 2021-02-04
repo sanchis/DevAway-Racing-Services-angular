@@ -1,3 +1,4 @@
-<ng-container *ngFor="let race of kartsService.races">
-  <devaway-race [race]="race"></devaway-race>
+<ng-container *ngFor="let race of kartsService.races;let i = index">
+  <devaway-race [race]="race"
+                [raceName]="'Race '+ i"></devaway-race>
 </ng-container>

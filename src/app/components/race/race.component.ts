@@ -10,5 +10,6 @@ export class RaceComponent {
 
   columns = ['position', 'name', 'team', 'age', 'time'];
   @Input() race: RankingRace[] | null = null;
+  @Input() raceName = '';
   constructor() { }
 }
