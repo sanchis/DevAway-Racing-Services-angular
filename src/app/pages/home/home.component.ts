@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     interval(1000).subscribe(() => this.componentSlider());
   }
 
-  private componentSlider() {
+  private componentSlider(): void {
     this.progress += (100 / this.MAX_TIME_SECONDS);
     console.log(this.progress);
     if (this.progress >= 100) {
