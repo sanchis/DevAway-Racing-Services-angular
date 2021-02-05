@@ -1,7 +1,6 @@
 $bg-color: map-get(map-get($devaway-racing-services-theme, background), background);
-@debug $bg-color;
 
-$bg-dot-color: hsl(256, 33, 70%);
+$bg-dot-color: hsl(256, 33%, 70%);
 
 $bg-dot-size: 1px;
 $bg-dot-space: 22px;
