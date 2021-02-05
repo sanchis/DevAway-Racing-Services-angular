@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { RankingRace } from 'src/app/models/ranking-race.model';
 
 @Component({
@@ -9,7 +11,19 @@ import { RankingRace } from 'src/app/models/ranking-race.model';
 export class RaceComponent {
 
   columns = ['position', 'name', 'team', 'age', 'time'];
-  @Input() race: RankingRace[] | null = null;
+  @Input() set race(source: RankingRace[]) {
+    this.dataSource.data = source;
+  }
   @Input() raceName = '';
+
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator | null = null;
+  public dataSource = new MatTableDataSource<RankingRace>([]);
+
   constructor() { }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+
+  }
+
 }

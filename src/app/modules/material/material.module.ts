@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const MATERIAL_MODULES = [
@@ -14,7 +15,8 @@ const MATERIAL_MODULES = [
   MatButtonModule,
   MatProgressBarModule,
   MatTableModule,
-  MatCardModule
+  MatCardModule,
+  MatPaginatorModule
 ];
 
 @NgModule({
