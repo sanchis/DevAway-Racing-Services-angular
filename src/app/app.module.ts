@@ -11,6 +11,7 @@ import { KartsService } from './services/karts.service';
 import { PilotComponent } from './components/pilot/pilot.component';
 import { RaceComponent } from './components/race/race.component';
 import { RacesComponent } from './pages/races/races.component';
+import { PilotsComponent } from './pages/pilots/pilots.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RacesComponent } from './pages/races/races.component';
     NavbarComponent,
     PilotComponent,
     RaceComponent,
-    RacesComponent
+    RacesComponent,
+    PilotsComponent
   ],
   imports: [
     MaterialModule,

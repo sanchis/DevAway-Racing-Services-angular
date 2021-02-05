@@ -8,7 +8,7 @@ import { Driver } from 'src/app/models/driver.model';
 })
 export class PilotComponent {
 
-  @Input() driver: Driver | null = null;
+  @Input() driver: Driver | undefined;
   constructor() { }
 
 }
