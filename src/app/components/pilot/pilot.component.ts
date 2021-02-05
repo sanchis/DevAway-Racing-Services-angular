@@ -8,6 +8,7 @@ import { Driver } from 'src/app/models/driver.model';
 })
 export class PilotComponent {
 
+  @Input() rankingPosition: number | null = null;
   @Input() driver: Driver | undefined;
   constructor() { }
 

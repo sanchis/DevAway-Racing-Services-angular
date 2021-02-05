@@ -3,14 +3,16 @@
 
   <div class="nav-items">
 
-    <button mat-button> Global Ranking </button>
+    <button mat-button
+            [routerLink]="['/ranking']"> Global Ranking </button>
     <button mat-button
             [routerLink]="['/pilot-races']"> Pilot Races </button>
     <button mat-button
             [routerLink]="['/races']"> Races </button>
   </div>
 
-  <div class="logo-container">
+  <div class="logo-container"
+       [routerLink]="['/']">
     <img class="logo"
          src="assets/logo.png">
   </div>

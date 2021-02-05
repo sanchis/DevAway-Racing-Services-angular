@@ -1,8 +1,29 @@
 <mat-card class="card">
   <mat-card-header>
+
+
+    <!-- <h1>{{ rankingPosition }}</h1> -->
     <div mat-card-avatar
          class="driver-avatar">
-      <img src="{{ driver?.picture }}"
+      <div *ngIf="rankingPosition">
+        <span [ngSwitch]="rankingPosition">
+          <img *ngSwitchCase="1"
+               src="/assets/trophy/gold.png" />
+
+          <img *ngSwitchCase="2"
+               src="/assets/trophy/silver.png" />
+          <img *ngSwitchCase="3"
+               src="/assets/trophy/bronze.png" />
+
+
+          <h1 *ngSwitchDefault>{{ rankingPosition }}</h1>
+
+
+        </span>
+
+      </div>
+      <img class="avatar"
+           src="{{ driver?.picture }}"
            [alt]="'driver '+driver?.name"
            srcset="">
     </div>

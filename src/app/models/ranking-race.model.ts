@@ -4,5 +4,5 @@ export interface RankingRace {
   age: number;
   name: string;
   team: string;
-  time: string | undefined;
+  time?: string | undefined;
 }

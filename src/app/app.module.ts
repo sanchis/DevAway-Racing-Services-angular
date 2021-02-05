@@ -13,6 +13,7 @@ import { RaceComponent } from './components/race/race.component';
 import { RacesComponent } from './pages/races/races.component';
 import { PilotsComponent } from './pages/pilots/pilots.component';
 import { RacePositionsComponent } from './components/race-positions/race-positions.component';
+import { RankingComponent } from './pages/ranking/ranking.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RacePositionsComponent } from './components/race-positions/race-positio
     RaceComponent,
     RacesComponent,
     PilotsComponent,
-    RacePositionsComponent
+    RacePositionsComponent,
+    RankingComponent
   ],
   imports: [
     MaterialModule,

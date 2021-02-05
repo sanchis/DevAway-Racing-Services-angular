@@ -1,0 +1,4 @@
+<ng-container *ngFor="let pilot of kartsService.globalRanking; let i = index">
+  <devaway-pilot [driver]="pilot"
+                 [rankingPosition]="i +1"></devaway-pilot>
+</ng-container>
