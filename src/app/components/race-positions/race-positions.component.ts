@@ -9,7 +9,7 @@ import { RankingPilotRace } from 'src/app/models/ranking-pilot.model';
 export class RacePositionsComponent {
 
   columns = ['name', 'position', 'time'];
-  @Input() races: RankingPilotRace[] | undefined = []
+  @Input() races: RankingPilotRace[] | undefined = [];
   constructor() { }
 
 

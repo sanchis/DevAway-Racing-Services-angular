@@ -39,8 +39,8 @@ import { RankingComponent } from './pages/ranking/ranking.component';
 })
 export class AppModule { }
 
-//TODO TEST
-//TODO readme
+// TODO TEST
+// TODO readme
 // https://github.com/filipows/angular-animations#running-demo-app
 // todo dark theme
 // todo tslint
