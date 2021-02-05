@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { RankingRace } from 'src/app/models/ranking-race.model';
@@ -8,7 +8,7 @@ import { RankingRace } from 'src/app/models/ranking-race.model';
   templateUrl: './race.component.html',
   styleUrls: ['./race.component.scss']
 })
-export class RaceComponent {
+export class RaceComponent implements AfterViewInit {
 
   columns = ['position', 'name', 'team', 'age', 'time'];
   @Input() set race(source: RankingRace[]) {

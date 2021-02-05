@@ -1,9 +1,4 @@
-<ng-container *ngFor="let race of kartsService.getRankinPilotRaces;let i = index">
-
+<ng-container *ngFor="let race of kartsService.getRankinPilotRaces">
   <devaway-pilot [driver]="race?.pilot"></devaway-pilot>
-
-  <ng-container *ngFor="let racePilot of race?.races;let raceName = index">
-    <devaway-race [race]="racePilot"
-                  [raceName]="'Race '+ raceName"></devaway-race>
-  </ng-container>
+  <devaway-race-positions [races]="race?.races"></devaway-race-positions>
 </ng-container>

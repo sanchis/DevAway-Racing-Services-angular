@@ -12,6 +12,7 @@ import { PilotComponent } from './components/pilot/pilot.component';
 import { RaceComponent } from './components/race/race.component';
 import { RacesComponent } from './pages/races/races.component';
 import { PilotsComponent } from './pages/pilots/pilots.component';
+import { RacePositionsComponent } from './components/race-positions/race-positions.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PilotsComponent } from './pages/pilots/pilots.component';
     PilotComponent,
     RaceComponent,
     RacesComponent,
-    PilotsComponent
+    PilotsComponent,
+    RacePositionsComponent
   ],
   imports: [
     MaterialModule,
@@ -39,3 +41,4 @@ export class AppModule { }
 //TODO readme
 // https://github.com/filipows/angular-animations#running-demo-app
 // todo dark theme
+// todo tslint

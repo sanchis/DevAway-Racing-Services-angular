@@ -44,7 +44,12 @@ export class KartsService {
   private getRankingByPilot(id: string): RankingPilot | null {
     const pilot = this.getPilot(id);
     if (pilot) {
-      const races = pilot.races.map(race => this.getRankingByRace(race.name));
+      const races = pilot.races.map(race => {
+        const rankingByRace = this.getRankingByRace(race.name);
+        const pilotInRace = rankingByRace.find(racePilot => racePilot._id === id);
+        const position = rankingByRace.findIndex(racePilot => racePilot._id === id);
+        return { position: position + 1, time: pilotInRace?.time, raceName: race.name };
+      });
       return { pilot, races };
     }
     return null;
@@ -64,9 +69,7 @@ export class KartsService {
     const ranking = new Map<string, { pilot: RankingRace, position: number }>();
     this.getRaces().forEach((races) => {
       /** For every race set the pilot and position */
-      // race.races = pilot?.races ?? getRankingByPilot(pilot._id).races;
       races.forEach((pilot, position) => {
-        // pilot.posi = pilot.time?.races ?? this.getRankingByPilot(pilot._id)?.races;
         const valuePilot = ranking.get(pilot._id)?.position || 0;
         ranking.set(pilot._id, { pilot, position: (valuePilot + position) });
       });
