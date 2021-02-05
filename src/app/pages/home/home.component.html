@@ -1,5 +1,15 @@
 <mat-progress-bar mode="determinate"
                   color="accent"
                   [value]="progress"></mat-progress-bar>
-<!-- {{ progress }}<br>
-{{ currentComponent }} -->
+<div class="container"><span [ngSwitch]="currentComponent">
+    <devaway-ranking *ngSwitchCase="0"></devaway-ranking>
+    <devaway-pilots *ngSwitchCase="1"></devaway-pilots>
+    <devaway-races *ngSwitchCase="2"></devaway-races>
+  </span></div><button mat-fab
+        class="scroll-status"
+        color="accent"
+        (click)="toogleStatusScroll()"
+        aria-label="Pause/Play auto-scroll">
+  <mat-icon *ngIf="scrollIsRunning">pause</mat-icon>
+  <mat-icon *ngIf="!scrollIsRunning">play_arrow</mat-icon>
+</button>

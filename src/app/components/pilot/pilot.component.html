@@ -1,8 +1,5 @@
 <mat-card class="card">
   <mat-card-header>
-
-
-    <!-- <h1>{{ rankingPosition }}</h1> -->
     <div mat-card-avatar
          class="driver-avatar">
       <div *ngIf="rankingPosition">
@@ -14,11 +11,7 @@
                src="/assets/trophy/silver.png" />
           <img *ngSwitchCase="3"
                src="/assets/trophy/bronze.png" />
-
-
           <h1 *ngSwitchDefault>{{ rankingPosition }}</h1>
-
-
         </span>
 
       </div>
@@ -31,7 +24,4 @@
     <mat-card-subtitle>Team: {{ driver?.team }}</mat-card-subtitle>
     <mat-card-subtitle>Age: {{ driver?.age }}</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-
-  </mat-card-content>
 </mat-card>

@@ -27,10 +27,6 @@ $devaway-racing-services-theme: mat-light-theme((color: (primary: $devaway-racin
 
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
-  height: 100%;
-}
 
 body {
   margin: 0;
@@ -41,4 +37,35 @@ body {
     linear-gradient($bg-color ($bg-dot-space - $bg-dot-size), transparent 1%) center,
     $bg-dot-color;
   background-size: $bg-dot-space $bg-dot-space;
+}
+
+h1.title {
+  font-size: 2.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+table.compact {
+  tr.mat-row {
+    height: 35px;
+  }
+}
+
+.container {
+
+  // TODO move to variables breackpoints
+  @media screen and (min-width: 1408px) {
+    width: 1344px;
+  }
+
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
+    width: 1152px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
+    width: 960px;
+  }
+
+  width: 100%;
+  margin: auto;
 }

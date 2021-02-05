@@ -1,4 +1,8 @@
-<ng-container *ngFor="let race of kartsService.getRankinPilotRaces">
-  <devaway-pilot [driver]="race?.pilot"></devaway-pilot>
-  <devaway-race-positions [races]="race?.races"></devaway-race-positions>
-</ng-container>
+<div class="container">
+
+  <h1 class="title">Pilot races</h1>
+  <ng-container *ngFor="let race of kartsService.getRankinPilotRaces">
+    <devaway-pilot [driver]="race?.pilot"></devaway-pilot>
+    <devaway-race-positions [races]="race?.races"></devaway-race-positions>
+  </ng-container>
+</div>
