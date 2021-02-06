@@ -43,4 +43,3 @@ export class AppModule { }
 // TODO readme
 // https://github.com/filipows/angular-animations#running-demo-app
 // todo dark theme
-// todo tslint

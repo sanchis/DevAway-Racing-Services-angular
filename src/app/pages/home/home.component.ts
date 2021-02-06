@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, OnDestroy, OnInit } from '@angular/core';
-import { interval, NEVER, of, Subject } from 'rxjs';
-import { repeatWhen, switchMap, takeUntil, takeWhile } from 'rxjs/operators';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { interval, Subject } from 'rxjs';
+import { repeatWhen, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'devaway-home',

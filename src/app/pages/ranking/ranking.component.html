@@ -1,4 +1,6 @@
-<div class="container">
+<div class="container"
+     [@fadeInOnEnter]
+     [@fadeOutOnLeave]>
 
   <h1 class="title">Global ranking</h1>
   <ng-container *ngFor="let pilot of kartsService.globalRanking; let i = index">
