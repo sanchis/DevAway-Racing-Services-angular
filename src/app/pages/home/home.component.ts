@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   private componentSlider(): void {
     this.autoScroll();
     this.progress += (100 / this.MAX_TIME_SECONDS);
-    console.log(this.progress);
     if (this.progress >= 100) {
       this.progress = 1;
       this.currentComponent = this.currentComponent === 2 ? 0 : this.currentComponent + 1;
@@ -63,7 +62,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private autoScroll(): void {
     if (this.progress > 5) {
-      console.log(this.doc.body.scrollTop);
       this.window.scrollTo({
         behavior: 'smooth',
         top: (this.window.scrollY + (document.body.scrollHeight
