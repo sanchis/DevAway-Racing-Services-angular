@@ -22,12 +22,10 @@ describe('Service: Karts', () => {
   }));
 
   it('data as data-testing', inject([KartsService], (service: any) => {
-    console.log('d', drivers);
     expect(service.drivers).toEqual(drivers);
   }));
 
   it('races property', inject([KartsService], (service: KartsService) => {
-    console.log(service.races);
     expect(service.races).toHaveSize(10);
     expect(service.races[0]).toHaveSize(4);
     expect(service.races[0][0]._id).toEqual('5f3a3c5fc4c1a2c2dd9df702');

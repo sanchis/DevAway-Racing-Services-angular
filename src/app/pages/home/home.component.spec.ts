@@ -50,11 +50,11 @@ describe('HomeComponent', () => {
     // tslint:disable-next-line: no-string-literal
     component['componentSlider']();
     expect(component.progress).toBeGreaterThan(beforeChangeStatus);
-    const beforeChangeComponent = component.currentComponent;
     for (let ticks = 0; ticks < 30; ticks++) {
+      // tslint:disable-next-line: no-string-literal
       component['componentSlider']();
     }
     expect(component.currentComponent).toBe(1);
-    expect(component.progress).toBeLessThan(beforeChangeStatus);
+    expect(component.progress).toBeGreaterThan(4);
   });
 });
