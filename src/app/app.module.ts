@@ -34,7 +34,7 @@ import { RankingComponent } from './pages/ranking/ranking.component';
     AppRoutingModule,
 
   ],
-  providers: [KartsService],
+  providers: [KartsService, { provide: Window, useValue: window }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

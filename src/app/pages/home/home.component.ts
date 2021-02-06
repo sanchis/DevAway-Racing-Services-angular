@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private readonly MAX_TIME_SECONDS = 30;
 
 
-  constructor(@Inject(DOCUMENT) private doc: Document) { }
+  constructor(@Inject(DOCUMENT) private doc: Document, private window: Window) { }
 
   ngOnInit(): void {
     this.unsubscribe = new Subject();
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private scrollToTop(): void {
-    window.scrollTo({
+    this.window.scrollTo({
       behavior: 'smooth',
       top: 0
     });
@@ -64,9 +64,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   private autoScroll(): void {
     if (this.progress > 5) {
       console.log(this.doc.body.scrollTop);
-      window.scrollTo({
+      this.window.scrollTo({
         behavior: 'smooth',
-        top: (window.scrollY + (document.body.scrollHeight
+        top: (this.window.scrollY + (document.body.scrollHeight
           / this.MAX_TIME_SECONDS))
       });
     }
