@@ -12,8 +12,9 @@ import { default as drivers } from './data.json';
 @Injectable()
 export class KartsService {
 
+  private readonly drivers = drivers;
   public readonly globalRanking = this.getGlobalRanking();
-  public readonly getRankinPilotRaces = drivers.map(drv => this.getRankingByPilot(drv._id));
+  public readonly getRankinPilotRaces = this.drivers.map(drv => this.getRankingByPilot(drv._id));
   public readonly races = this.getRaces();
 
   constructor() { }
@@ -22,14 +23,14 @@ export class KartsService {
    * Get data form pilot name
    */
   private getPilot(id: string): Driver | undefined {
-    return drivers.find(driver => driver._id === id);
+    return this.drivers.find(driver => driver._id === id);
   }
 
   /**
    * Get Ranking by race name
    */
   private getRankingByRace(raceName: string): RankingRace[] {
-    return drivers.map(drv => {
+    return this.drivers.map(drv => {
       const { races, ...pilot } = drv;
       const time = this.getPilotRace(drv, raceName)?.time;
       return { time, ...pilot };

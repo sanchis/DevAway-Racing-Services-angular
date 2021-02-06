@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { KartsService } from 'src/app/services/karts.service';
 
 import { PilotsComponent } from './pilots.component';
 
@@ -8,7 +10,11 @@ describe('PilotsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [PilotsComponent]
+      declarations: [PilotsComponent],
+      imports: [BrowserAnimationsModule],
+      providers: [
+        KartsService
+      ]
     })
       .compileComponents();
   }));

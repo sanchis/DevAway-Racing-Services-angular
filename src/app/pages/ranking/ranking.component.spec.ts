@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { KartsService } from 'src/app/services/karts.service';
 
 import { RankingComponent } from './ranking.component';
 
@@ -8,7 +10,11 @@ describe('RankingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [RankingComponent]
+      declarations: [RankingComponent],
+      imports: [BrowserAnimationsModule],
+      providers: [
+        KartsService
+      ]
     })
       .compileComponents();
   }));

@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +8,8 @@ describe('HomeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent]
+      declarations: [HomeComponent],
+      providers: [{ provide: Window, useValue: window }]
     })
       .compileComponents();
   }));
@@ -20,6 +21,40 @@ describe('HomeComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
+  });
+
+  it('start observer', () => {
+    // tslint:disable-next-line: no-string-literal
+    component['$start'].next();
+    expect(component).toBeTruthy();
+  });
+
+  it('pause observer', () => {
+    // tslint:disable-next-line: no-string-literal
+    component['$pause'].next();
+    expect(component).toBeTruthy();
+  });
+
+  it('toggle status', () => {
+    const beforeChangeStatus = component.scrollIsRunning;
+    component.toggleStatusScroll();
+    expect(component.scrollIsRunning).toBe(!beforeChangeStatus);
+    component.toggleStatusScroll();
+    expect(component.scrollIsRunning).toBe(beforeChangeStatus);
+  });
+
+  it('component change', () => {
+    const beforeChangeStatus = component.progress;
+    // tslint:disable-next-line: no-string-literal
+    component['componentSlider']();
+    expect(component.progress).toBeGreaterThan(beforeChangeStatus);
+    const beforeChangeComponent = component.currentComponent;
+    for (let ticks = 0; ticks < 30; ticks++) {
+      component['componentSlider']();
+    }
+    expect(component.currentComponent).toBe(1);
+    expect(component.progress).toBeLessThan(beforeChangeStatus);
   });
 });
