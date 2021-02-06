@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private readonly $pause = new Subject<void>();
   private readonly $start = new Subject<void>();
-  private readonly MAX_TIME_SECONDS = 30;
+  private readonly MAX_TIME_SECONDS = 30;// TODO move to constants
 
 
   constructor(@Inject(DOCUMENT) private doc: Document, private window: Window) { }
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     ).subscribe(() => this.componentSlider());
   }
 
-  toogleStatusScroll(): void {
+  toggleStatusScroll(): void {
     if (this.scrollIsRunning) {
       this.$pause.next();
     } else {
