@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private readonly $pause = new Subject<void>();
   private readonly $start = new Subject<void>();
-  private readonly MAX_TIME_SECONDS = 30;// TODO move to constants
+  private readonly MAX_TIME_SECONDS = 30; // TODO move to constants
 
 
   constructor(@Inject(DOCUMENT) private doc: Document, private window: Window) { }
