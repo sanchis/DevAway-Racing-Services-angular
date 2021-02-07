@@ -4,17 +4,21 @@
   <div class="nav-items">
 
     <button mat-button
+            [@bounceOne]
             [routerLink]="['/ranking']"
             routerLinkActive="active"> Global Ranking </button>
     <button mat-button
+            [@bounceTwo]
             [routerLink]="['/pilot-races']"
             routerLinkActive="active"> Pilot Races </button>
     <button mat-button
+            [@bounceThree]
             [routerLink]="['/races']"
             routerLinkActive="active"> Races </button>
   </div>
 
   <div class="logo-container"
+       [@rubberBandOnEnter]
        [routerLink]="['/']">
     <img class="logo"
          src="assets/logo.png">
