@@ -52,6 +52,10 @@ table.compact {
   }
 }
 
+.mat-paginator-container {
+  min-height: 40px;
+}
+
 .container {
 
   @media screen and (min-width: $desktop) {

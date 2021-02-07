@@ -23,12 +23,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.unsubscribe = new Subject();
     this.scrollToTop();
+
+    // Every 1 second check progress
     interval(1000).pipe(takeUntil(this.unsubscribe),
       takeUntil(this.$pause),
       repeatWhen(() => this.$start)
     ).subscribe(() => this.componentSlider());
   }
 
+  /**
+   * Listen floating button to stop/play autoscroll.
+   */
   toggleStatusScroll(): void {
     if (this.scrollIsRunning) {
       this.$pause.next();
@@ -39,7 +44,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-
+  /**
+   * Move the progress and check if the progress is finished.
+   *  if is finished move to the next component.
+   */
   private componentSlider(): void {
     this.autoScroll();
     this.progress += (100 / MAX_TIME_SECONDS);
@@ -50,6 +58,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Move the scroll to top.
+   */
   private scrollToTop(): void {
     this.window.scrollTo({
       behavior: 'smooth',
@@ -58,6 +69,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
+  /**
+   * Move scroll
+   */
   private autoScroll(): void {
     if (this.progress > 5) {
       this.window.scrollTo({
