@@ -37,7 +37,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "./DevAway-Racing-Services-angular",
+              "baseHref": "./",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
