@@ -9,7 +9,7 @@ Show the list of pilots with their times.
 
 - Global ranking of pilots.
 - List of drivers.
-- Result of each race per driver.
+- Result of each race per driver.  
   This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
 # Getting Started
