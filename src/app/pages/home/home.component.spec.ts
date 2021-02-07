@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { MAX_TIME_SECONDS } from 'src/app/app.constants';
 
 import { HomeComponent } from './home.component';
 
@@ -50,11 +51,11 @@ describe('HomeComponent', () => {
     // tslint:disable-next-line: no-string-literal
     component['componentSlider']();
     expect(component.progress).toBeGreaterThan(beforeChangeStatus);
-    for (let ticks = 0; ticks < 30; ticks++) {
+    for (let ticks = 0; ticks < MAX_TIME_SECONDS; ticks++) {
       // tslint:disable-next-line: no-string-literal
       component['componentSlider']();
     }
     expect(component.currentComponent).toBe(1);
-    expect(component.progress).toBeGreaterThan(4);
+    expect(component.progress).toBeGreaterThan(2);
   });
 });
