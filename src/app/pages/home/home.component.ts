@@ -1,4 +1,3 @@
-import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { repeatWhen, takeUntil } from 'rxjs/operators';
@@ -19,7 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private readonly $pause = new Subject<void>();
   private readonly $start = new Subject<void>();
 
-  constructor(@Inject(DOCUMENT) private doc: Document, private window: Window) { }
+  constructor(private window: Window) { }
 
   ngOnInit(): void {
     this.unsubscribe = new Subject();
