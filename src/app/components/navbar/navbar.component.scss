@@ -1,16 +1,25 @@
+$navbar-breackpoint: 600px;
+
 .navbar {
+  @media screen and (max-width: $navbar-breackpoint) {
+    flex-direction: column;
+    height: auto;
+  }
+
   .nav-items {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    @media screen and (max-width: $navbar-breackpoint) {
+      flex-direction: column;
+    }
   }
 
   .active {
     background-color: #ff9674;
   }
-
-
 
 
   .logo-container {
@@ -21,6 +30,10 @@
 
     .logo {
       width: 18rem;
+
+      @media screen and (max-width: $navbar-breackpoint) {
+        width: 100%;
+      }
     }
   }
 

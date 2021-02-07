@@ -24,6 +24,7 @@ $devaway-racing-services-theme: mat-light-theme((color: (primary: $devaway-racin
 // that you are using.
 @include angular-material-theme($devaway-racing-services-theme);
 @import 'variables';
+@import 'breackpoints';
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -54,15 +55,15 @@ table.compact {
 .container {
 
   // TODO move to variables breackpoints
-  @media screen and (min-width: 1408px) {
+  @media screen and (min-width: $desktop) {
     width: 1344px;
   }
 
-  @media screen and (min-width: 1216px) and (max-width: 1407px) {
+  @media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
     width: 1152px;
   }
 
-  @media screen and (min-width: 1024px) and (max-width: 1215px) {
+  @media screen and (min-width: $min-mobile) and (max-width: $max-mobile) {
     width: 960px;
   }
 
