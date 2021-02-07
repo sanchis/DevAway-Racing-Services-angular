@@ -38,7 +38,3 @@ import { RankingComponent } from './pages/ranking/ranking.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// TODO readme
-// todo dark theme
-// create 404 page

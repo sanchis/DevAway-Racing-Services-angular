@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="./src/assets/logo.png" align="center" style="max-width:80%" />
+  <img src="./gh-images/logo.png" align="center" style="max-width:80%" />
 </p>
 
 # Devaway-Racing-Services
