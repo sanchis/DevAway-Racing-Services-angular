@@ -54,7 +54,6 @@ table.compact {
 
 .container {
 
-  // TODO move to variables breackpoints
   @media screen and (min-width: $desktop) {
     width: 1344px;
   }

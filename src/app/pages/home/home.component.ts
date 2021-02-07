@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { repeatWhen, takeUntil } from 'rxjs/operators';
+import { MAX_TIME_SECONDS } from 'src/app/app.constants';
 
 @Component({
   selector: 'devaway-home',
@@ -17,8 +18,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private readonly $pause = new Subject<void>();
   private readonly $start = new Subject<void>();
-  private readonly MAX_TIME_SECONDS = 30; // TODO move to constants
-
 
   constructor(@Inject(DOCUMENT) private doc: Document, private window: Window) { }
 
@@ -44,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private componentSlider(): void {
     this.autoScroll();
-    this.progress += (100 / this.MAX_TIME_SECONDS);
+    this.progress += (100 / MAX_TIME_SECONDS);
     if (this.progress >= 100) {
       this.progress = 1;
       this.currentComponent = this.currentComponent === 2 ? 0 : this.currentComponent + 1;
@@ -65,7 +64,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.window.scrollTo({
         behavior: 'smooth',
         top: (this.window.scrollY + (document.body.scrollHeight
-          / this.MAX_TIME_SECONDS))
+          / MAX_TIME_SECONDS))
       });
     }
   }
