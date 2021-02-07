@@ -1,0 +1,20 @@
+.container-not-found {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .not-found-text {
+    font-size: 18vw;
+    margin-top: 15px;
+    line-height: 18vw;
+  }
+
+  img {
+    height: auto;
+    width: 23%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+}
