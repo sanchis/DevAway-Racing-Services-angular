@@ -40,6 +40,5 @@ import { RankingComponent } from './pages/ranking/ranking.component';
 export class AppModule { }
 
 // TODO readme
-// https://github.com/filipows/angular-animations#running-demo-app
 // todo dark theme
 // create 404 page
