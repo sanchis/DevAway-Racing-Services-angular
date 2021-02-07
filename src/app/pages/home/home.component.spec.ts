@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, flush, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { MAX_TIME_SECONDS } from 'src/app/app.constants';
 
 import { HomeComponent } from './home.component';
@@ -58,4 +58,19 @@ describe('HomeComponent', () => {
     expect(component.currentComponent).toBe(1);
     expect(component.progress).toBeGreaterThan(2);
   });
+
+  it('interval tick and progress change', fakeAsync(() => {
+    component.ngOnInit();
+    tick(1000);
+    expect(component.progress).toBeGreaterThan(1);
+    component.ngOnDestroy();
+  }));
+
+  it('interval move last component', fakeAsync(() => {
+    component.currentComponent = 2;
+    component.ngOnInit();
+    tick(MAX_TIME_SECONDS * 1000);
+    expect(component.currentComponent).toBe(0);
+    component.ngOnDestroy();
+  }));
 });
