@@ -1,6 +1,15 @@
 {
   "name": "devaway-racing-services",
   "version": "0.0.0",
+  "author": {
+    "name": "Adrian Sanchis Gallego"
+  },
+  "description": "",
+  "homepage": "https://sanchis.github.io/DevAway-Racing-Services-angular/",
+  "keywords": [
+    "devaway",
+    "devaway-racing-services"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
